@@ -14,6 +14,8 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] float positionYawFactor = 3f;
     [SerializeField] float controlRollFactor = -20f;
 
+    [SerializeField] InputAction movement;
+
     float xVal;
     float yVal;
 
