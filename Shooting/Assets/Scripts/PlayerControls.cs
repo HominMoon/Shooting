@@ -15,6 +15,7 @@ public class PlayerControls : MonoBehaviour
     [Header("Laser gun array")]
     [Tooltip("Add all lasers here")]
     [SerializeField] GameObject[] lasers;
+     
 
     [Header("Screen Based tuning")]
     [SerializeField] float positionPitchFactor = -2f;
@@ -24,7 +25,7 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] float positionYawFactor = 3f;
     [SerializeField] float controlRollFactor = -20f;
 
-    
+    public int laserDamage = 20;
 
 
     float xVal;
