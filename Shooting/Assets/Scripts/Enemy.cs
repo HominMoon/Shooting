@@ -5,7 +5,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] GameObject particleExplode;
     [SerializeField] GameObject particleHitByLaser;
-    [SerializeField] Transform parent;
+    [SerializeField] GameObject parentGameObject;
     [SerializeField] int point = 1;
     [SerializeField] int health = 100;
 
@@ -16,13 +16,22 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         scoreBoard = FindObjectOfType<ScoreBoard>();
+        parentGameObject = GameObject.FindWithTag("Spawn");
+        AddRigidBody();
+    }
+
+    private void AddRigidBody()
+    {
+        Rigidbody rb = gameObject.AddComponent<Rigidbody>();
+        rb.useGravity = false;
     }
 
     void OnParticleCollision(GameObject other)
     {
         ProcessHit();
-        if (health <= 0){
-            KillEnemy();     
+        if (health <= 0)
+        {
+            KillEnemy();
         }
 
     }
@@ -30,15 +39,16 @@ public class Enemy : MonoBehaviour
     void ProcessHit()
     {
         GameObject vfx = Instantiate(particleHitByLaser, transform.position, Quaternion.identity);
-        vfx.transform.parent = parent;
+        vfx.transform.parent = parentGameObject.transform;
         health -= hitDamage;
-        scoreBoard.IncreaseScore(point);
+        
     }
 
     void KillEnemy()
     {
         GameObject vfx = Instantiate(particleExplode, transform.position, Quaternion.identity);
-        vfx.transform.parent = parent;
+        vfx.transform.parent = parentGameObject.transform;
+        scoreBoard.IncreaseScore(point);
         Destroy(gameObject);
     }
 

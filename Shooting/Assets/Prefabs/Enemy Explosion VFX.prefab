@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6938472786590069907}
   - component: {fileID: 2278860436081117394}
   m_Layer: 0
-  m_Name: Enemy Explosion
+  m_Name: Enemy Explosion VFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4825,4 +4825,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d6b6faa24879d4d840a4261b9b6c4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeTillDestroy: 15
+  timeTillDestroy: 1
