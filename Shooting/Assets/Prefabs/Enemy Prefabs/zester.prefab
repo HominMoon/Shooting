@@ -502,9 +502,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecac8c86f710460439ae737d1dd19c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleExplode: {fileID: 6938472786590069909, guid: 0361ac6fe3e0284469a3232880f16e37, type: 3}
+  Explode: {fileID: 6938472786590069909, guid: 0361ac6fe3e0284469a3232880f16e37, type: 3}
   particleHitByLaser: {fileID: 6938472786590069909, guid: cb649840e0598c241a630ae41e46951e, type: 3}
-  parent: {fileID: 0}
+  parentGameObject: {fileID: 0}
   point: 1
   health: 100
   hitDamage: 10

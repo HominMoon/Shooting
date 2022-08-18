@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] GameObject particleExplode;
+    [SerializeField] GameObject Explode;
     [SerializeField] GameObject particleHitByLaser;
     [SerializeField] GameObject parentGameObject;
     [SerializeField] int point = 1;
@@ -46,8 +46,8 @@ public class Enemy : MonoBehaviour
 
     void KillEnemy()
     {
-        GameObject vfx = Instantiate(particleExplode, transform.position, Quaternion.identity);
-        vfx.transform.parent = parentGameObject.transform;
+        GameObject fx = Instantiate(Explode, transform.position, Quaternion.identity);
+        fx.transform.parent = parentGameObject.transform;
         scoreBoard.IncreaseScore(point);
         Destroy(gameObject);
     }
